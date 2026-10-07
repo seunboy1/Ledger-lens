@@ -1,0 +1,42 @@
+# Ledger Lens local infrastructure — entirely open-source, no AWS service.
+# Run from the repo root: docker compose -f infra/docker-compose.yml up -d
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ledgerlens
+      POSTGRES_PASSWORD: ledgerlens
+      POSTGRES_DB: ledgerlens
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ledgerlens
+      MINIO_ROOT_PASSWORD: ledgerlens-secret
+    ports:
+      - "9000:9000" # S3 API
+      - "9001:9001" # Web console
+    volumes:
+      - minio_data:/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    ports:
+      - "5672:5672"  # AMQP
+      - "15672:15672" # Management UI
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  postgres_data:
+  minio_data:
+  rabbitmq_data:

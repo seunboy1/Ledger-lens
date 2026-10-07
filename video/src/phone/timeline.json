@@ -1,0 +1,16 @@
+{
+  "fps": 30,
+  "total": 540,
+  "intro": { "start": 0, "settle": 42, "load": 34 },
+  "notifs": { "start": 60, "at": [74, 104, 134], "caption": 64 },
+  "glance": { "start": 180, "zoomEnd": 268, "caption": 184, "salary": 196, "signals": 214 },
+  "ask": { "start": 270, "typeStart": 280, "typeEnd": 314, "send": 318, "answer": 324, "countEnd": 348, "rows": 352, "caption": 274 },
+  "proof": { "start": 390, "off": 404, "fix": 432, "match": 440, "caption": 394 },
+  "outro": { "start": 480, "caption": 484, "fadeStart": 522 },
+  "poster": 370,
+  "banks": {
+    "kestrel": "GTBank",
+    "harbour": "Access Bank",
+    "oakline": "Moniepoint MFB"
+  }
+}

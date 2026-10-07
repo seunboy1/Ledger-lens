@@ -1,0 +1,29 @@
+{
+  "fps": 30,
+  "total": 540,
+  "sting": [0, 24],
+  "rise": [24, 51],
+  "wake": [51, 57],
+  "settle": [57, 84],
+  "push": [84, 96],
+  "heroPop": [90, 162],
+  "pullBack": [162, 186],
+  "notifs": [102, 120, 138],
+  "notifOut": 156,
+  "glance": { "start": 186, "scroll": [208, 228], "end": 264 },
+  "toAsk": [264, 278],
+  "ask": { "typeStart": 282, "typeEnd": 314, "send": 316, "answer": 322, "countEnd": 344, "rows": 346, "pops": [352, 358, 364], "popBack": [388, 398] },
+  "toProof": [405, 418],
+  "proof": { "off": 420, "pop": 424, "fix": 448, "match": 456, "popBack": [466, 474] },
+  "sheet": [474, 492],
+  "endCut": 504,
+  "captions": [
+    { "lines": ["Every statement.", "Verified."], "from": 96, "to": 168, "lower": true },
+    { "lines": ["Every account,", "at a glance."], "from": 192, "to": 266 },
+    { "lines": ["Ask it", "anything."], "from": 270, "to": 403 },
+    { "lines": ["Every number,", "checked."], "from": 410, "to": 474 },
+    { "lines": ["Answers you", "can check."], "from": 480, "to": 504 }
+  ],
+  "poster": 380,
+  "banks": { "kestrel": "GTBank", "harbour": "Access Bank", "oakline": "Moniepoint MFB" }
+}

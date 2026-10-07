@@ -1,0 +1,1 @@
+Upload your bank statements, then just ask: "How much did I spend in July?" Ledger Lens answers with the exact rows, and only after every row checks out against the statement's own running balance.

@@ -1,0 +1,17 @@
+{
+  "fps": 30,
+  "total": 642,
+  "scenes": {
+    "ask": [0, 195],
+    "formats": [195, 312],
+    "pipeline": [312, 414],
+    "proof": [414, 552],
+    "outro": [552, 642]
+  },
+  "ask": { "typeStart": 6, "typeEnd": 50, "send": 56, "answer": 64, "countEnd": 92, "evidence": 108, "caption2": 116 },
+  "formats": { "cards": [8, 20, 32], "stored": 62 },
+  "pipeline": { "nodes": [6, 18, 30, 42, 54], "counterStart": 20, "counterEnd": 80 },
+  "proof": { "off": 18, "fix": 64, "match": 72 },
+  "outro": { "mark": 4, "name": 12, "line": 24 },
+  "poster": 186
+}

@@ -1,0 +1,36 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ledger-lens-api",
+      "runtimeExecutable": "pipelines/.venv/bin/python",
+      "runtimeArgs": [
+        "scripts/dev_api.py"
+      ],
+      "port": 8000
+    },
+    {
+      "name": "ledger-lens-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "run",
+        "dev"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "ledger-lens-api-sandbox",
+      "runtimeExecutable": "pipelines/.venv/bin/python",
+      "runtimeArgs": [
+        "scripts/dev_api.py",
+        "--port",
+        "8010",
+        "--data-dir",
+        ".ledgerlens-sandbox"
+      ],
+      "port": 8010
+    }
+  ]
+}

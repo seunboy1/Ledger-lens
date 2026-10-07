@@ -1,0 +1,24 @@
+/* The app's own tokens + Tailwind, scanning the real components. */
+@import "../../frontend/src/app/globals.css";
+@source "../../frontend/src/components";
+@source "./";
+
+/* CSS animations run on wall-clock time; in a frame-by-frame render they must
+   be off so every frame is a pure function of the frame number. */
+.rise-in,
+.skeleton,
+.animate-spin {
+  animation: none !important;
+}
+* {
+  transition: none !important;
+}
+
+/* Promo pop layer: same layout as the screen, only `.pop` elements paint. */
+.pop-layer * {
+  visibility: hidden;
+}
+.pop-layer .pop,
+.pop-layer .pop * {
+  visibility: visible;
+}

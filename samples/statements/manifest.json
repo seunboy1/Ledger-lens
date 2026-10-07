@@ -1,0 +1,161 @@
+[
+  {
+    "file": "01-kestrel-salary-apr-sep-2026.pdf",
+    "bank": "Kestrel Bank Plc",
+    "layout": "kestrel",
+    "layout_description": "Separate Debit and Credit columns, dd/mm/yyyy, Trans Date + Value Date",
+    "account_name": "CHIDINMA OKAFOR",
+    "period": [
+      "2026-04-01",
+      "2026-09-30"
+    ],
+    "rows": 120,
+    "opening_balance": "412350.18",
+    "closing_balance": "2882800.18",
+    "total_credits": "5170000.00",
+    "total_debits": "2699550.00",
+    "expected_status": "reconciled",
+    "in_demo_seed": true,
+    "notes": "Salary account. Regular salary on the 25th, subscriptions, loan repayments, betting, one returned-cheque fee.",
+    "pages": 3
+  },
+  {
+    "file": "02-harbour-savings-apr-sep-2026.pdf",
+    "bank": "Harbour Trust Bank",
+    "layout": "harbour",
+    "layout_description": "One signed Amount column (negative = debit), yyyy-mm-dd",
+    "account_name": "CHIDINMA OKAFOR",
+    "period": [
+      "2026-04-01",
+      "2026-09-30"
+    ],
+    "rows": 21,
+    "opening_balance": "1250000.00",
+    "closing_balance": "1897726.68",
+    "total_credits": "952987.99",
+    "total_debits": "305261.31",
+    "expected_status": "reconciled",
+    "in_demo_seed": true,
+    "notes": "Savings account with a signed Amount column: debits are negative numbers, no DR/CR label.",
+    "pages": 1
+  },
+  {
+    "file": "03-oakline-business-jul-sep-2026.pdf",
+    "bank": "Oakline Microfinance Bank",
+    "layout": "oakline",
+    "layout_description": "Amount plus a DR/CR flag column, dd-Mon-yyyy",
+    "account_name": "CHIDINMA OKAFOR (CO FABRICS)",
+    "period": [
+      "2026-07-01",
+      "2026-09-30"
+    ],
+    "rows": 45,
+    "opening_balance": "96420.50",
+    "closing_balance": "777695.50",
+    "total_credits": "1986300.00",
+    "total_debits": "1305025.00",
+    "expected_status": "reconciled",
+    "in_demo_seed": true,
+    "notes": "Business account with a DR/CR flag column. Goes overdrawn once (negative running balance).",
+    "pages": 1
+  },
+  {
+    "file": "04-palmgrove-current-jul-sep-2026.pdf",
+    "bank": "Palmgrove Bank Limited",
+    "layout": "palmgrove",
+    "layout_description": "Withdrawals and Lodgements columns, dd.mm.yyyy, Balance B/F and C/F rows",
+    "account_name": "CHIDINMA OKAFOR",
+    "period": [
+      "2026-07-01",
+      "2026-09-30"
+    ],
+    "rows": 23,
+    "opening_balance": "254210.75",
+    "closing_balance": "248860.75",
+    "total_credits": "720000.00",
+    "total_debits": "725350.00",
+    "expected_status": "reconciled",
+    "in_demo_seed": false,
+    "notes": "A layout the demo workspace has not seen: the spec is learned on upload.",
+    "pages": 1
+  },
+  {
+    "file": "05-crestline-household-oct25-sep26.pdf",
+    "bank": "Crestline Bank Plc",
+    "layout": "crestline",
+    "layout_description": "Money Out and Money In columns, dd Mon yyyy",
+    "account_name": "EMEKA OKAFOR",
+    "period": [
+      "2025-10-01",
+      "2026-09-30"
+    ],
+    "rows": 120,
+    "opening_balance": "318640.40",
+    "closing_balance": "2792840.40",
+    "total_credits": "7344000.00",
+    "total_debits": "4869800.00",
+    "expected_status": "reconciled",
+    "in_demo_seed": false,
+    "notes": "Another unseen layout (Money Out / Money In), 12 months, several pages.",
+    "pages": 3
+  },
+  {
+    "file": "06-kestrel-joint-jul-sep-2026-misprint.pdf",
+    "bank": "Kestrel Bank Plc",
+    "layout": "kestrel",
+    "layout_description": "Separate Debit and Credit columns, dd/mm/yyyy, Trans Date + Value Date",
+    "account_name": "CHIDINMA & EMEKA OKAFOR",
+    "period": [
+      "2026-07-01",
+      "2026-09-30"
+    ],
+    "rows": 26,
+    "opening_balance": "188200.00",
+    "closing_balance": "234400.00",
+    "total_credits": "720000.00",
+    "total_debits": "673800.00",
+    "expected_status": "needs_review",
+    "in_demo_seed": true,
+    "notes": "Same layout as 01 (spec reused, no new induction). One amount is misprinted, so the statement is held for review until the row is corrected.",
+    "misprint": {
+      "row": 13,
+      "date": "2026-08-05",
+      "narration": "POS PURCHASE HALLMARK SUPERMART IKEJA",
+      "printed_amount": "6800.00",
+      "correct_amount": "7300.00"
+    },
+    "pages": 1
+  },
+  {
+    "file": "07-oakline-business-oct24-sep26-large.pdf",
+    "bank": "Oakline Microfinance Bank",
+    "layout": "oakline",
+    "layout_description": "Amount plus a DR/CR flag column, dd-Mon-yyyy",
+    "account_name": "CHIDINMA OKAFOR (CO FABRICS)",
+    "period": [
+      "2024-10-01",
+      "2026-09-30"
+    ],
+    "rows": 3840,
+    "opening_balance": "1250000.00",
+    "closing_balance": "95883100.00",
+    "total_credits": "118383200.00",
+    "total_debits": "23750100.00",
+    "expected_status": "reconciled",
+    "in_demo_seed": false,
+    "notes": "Two years of daily settlements, ~100 pages: ingestion splits it into several 40-page chunks. Same layout as 03, so the cached spec is reused.",
+    "pages": 73
+  },
+  {
+    "file": "08-scanned-statement-no-text-layer.pdf",
+    "expected_status": "failed",
+    "in_demo_seed": false,
+    "notes": "Statement 01 rasterized into images, like a phone scan. There is no text layer and scanned-page OCR is not enabled, so ingestion fails with a clear reason instead of guessing."
+  },
+  {
+    "file": "09-not-a-statement-letter.pdf",
+    "expected_status": "failed",
+    "in_demo_seed": false,
+    "notes": "A bank letter with no transaction table. Ingestion fails with 'No transaction table was found'."
+  }
+]

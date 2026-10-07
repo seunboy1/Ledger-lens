@@ -1,0 +1,1 @@
+Ask your bank statements a question and get the answer with the exact rows behind it. Ledger Lens checks every row against the statement's own running balance before a single number counts.

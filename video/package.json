@@ -1,0 +1,25 @@
+{
+  "name": "ledger-lens-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Code-rendered product reel for Ledger Lens (Remotion).",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:reel": "remotion render src/index.ts LedgerLensReel out/ledger-lens-9x16.mp4",
+    "render:feed": "remotion render src/index.ts LedgerLensFeed out/ledger-lens-4x5.mp4",
+    "render": "npm run render:reel && npm run render:feed"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.532",
+    "@remotion/google-fonts": "^4.0.532",
+    "@remotion/tailwind-v4": "^4.0.532",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.532",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

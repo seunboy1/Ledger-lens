@@ -1,0 +1,30 @@
+# Dependencies and build output
+node_modules/
+.next/
+frontend/next-env.d.ts
+frontend/tsconfig.tsbuildinfo
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/*.egg-info/
+video/out/
+
+# Local data (SQLite DB, uploaded statements, sandboxes)
+backend/.ledgerlens/
+backend/.ledgerlens-sandbox/
+.ledgerlens/
+
+# Secrets
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Private research for the original client conversation (not for publication)
+reports/
+research_notes/
+
+# Scratch and OS
+scratchpad/
+.DS_Store
+* 2.*

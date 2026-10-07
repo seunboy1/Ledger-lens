@@ -1,0 +1,50 @@
+[
+  {
+    "key": "kestrel",
+    "bank": "Kestrel Bank",
+    "image": "statements/kestrel.png",
+    "width": 2296,
+    "height": 187,
+    "highlight": {
+      "y": 94,
+      "h": 93
+    },
+    "row": {
+      "date": "01 Apr 2026",
+      "description": "GYMHOUSE MONTHLY MEMBERSHIP",
+      "amount": 15000.0
+    }
+  },
+  {
+    "key": "harbour",
+    "bank": "Harbour Trust Bank",
+    "image": "statements/harbour.png",
+    "width": 2240,
+    "height": 188,
+    "highlight": {
+      "y": 94,
+      "h": 94
+    },
+    "row": {
+      "date": "30 Apr 2026",
+      "description": "WITHHOLDING TAX ON INTEREST",
+      "amount": 921.84
+    }
+  },
+  {
+    "key": "oakline",
+    "bank": "Oakline Microfinance Bank",
+    "image": "statements/oakline.png",
+    "width": 2268,
+    "height": 187,
+    "highlight": {
+      "y": 94,
+      "h": 93
+    },
+    "row": {
+      "date": "03 Jul 2026",
+      "description": "TRF TO ADEBAYO TEXTILE SUPPLIES",
+      "amount": 206500.0
+    }
+  }
+]

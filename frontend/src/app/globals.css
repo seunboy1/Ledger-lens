@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/*
+ * Ledger Lens tokens. Cool neutrals, one cobalt accent, and semantic
+ * credit/debit colours that never double as decoration. Text colours and
+ * chart-mark colours are separate tokens: the chart pair was validated for
+ * colour-vision deficiency (dataviz validator, OKLab ΔE), the text pair for
+ * WCAG AA contrast. See DESIGN.md §3.
+ */
+:root {
+  color-scheme: light;
+  --bg: #f4f5f7;
+  --surface: #fcfcfd;
+  --surface-sunken: #eef0f3;
+  --border: #e1e4e9;
+  --border-strong: #c9ced6;
+  --ink: #0f1217;
+  --ink-soft: #454c58;
+  --muted: #646b77;
+  --accent: #2b45d4;
+  --accent-hover: #2239b8;
+  --accent-ink: #2239b8;
+  --accent-soft: #e9ecfd;
+  --on-accent: #fcfcfd;
+  --credit: #0c6e46;
+  --credit-soft: #e4f3ec;
+  --debit: #b4361c;
+  --debit-soft: #fbebe6;
+  --warn: #8a5200;
+  --warn-soft: #fbf0db;
+  --error: #9b2c4a;
+  --error-soft: #f8e6ec;
+  --chart-in: #0c6e46;
+  --chart-out: #e0703c;
+  --chart-line: #454c58;
+  --chart-grid: #e6e8ec;
+  --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent) 28%, transparent);
+  --shadow-pop: 0 1px 2px rgb(15 18 23 / 0.06), 0 8px 24px rgb(15 18 23 / 0.08);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0c0e11;
+    --surface: #13161b;
+    --surface-sunken: #0f1115;
+    --border: #232830;
+    --border-strong: #353c47;
+    --ink: #e7e9ec;
+    --ink-soft: #b0b6c0;
+    --muted: #8a919c;
+    --accent: #7b8ffa;
+    --accent-hover: #93a3fb;
+    --accent-ink: #a5b2fc;
+    --accent-soft: #1b2142;
+    --on-accent: #0c0e11;
+    --credit: #4cc28f;
+    --credit-soft: #11261c;
+    --debit: #f08a70;
+    --debit-soft: #2c1712;
+    --warn: #e8b056;
+    --warn-soft: #2a1f0c;
+    --error: #ec8aa6;
+    --error-soft: #2c1219;
+    --chart-in: #2e9b6a;
+    --chart-out: #e0583f;
+    --chart-line: #b0b6c0;
+    --chart-grid: #222730;
+    --shadow-pop: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+  }
+}
+
+/* Keep in sync with the media-query block above. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0c0e11;
+  --surface: #13161b;
+  --surface-sunken: #0f1115;
+  --border: #232830;
+  --border-strong: #353c47;
+  --ink: #e7e9ec;
+  --ink-soft: #b0b6c0;
+  --muted: #8a919c;
+  --accent: #7b8ffa;
+  --accent-hover: #93a3fb;
+  --accent-ink: #a5b2fc;
+  --accent-soft: #1b2142;
+  --on-accent: #0c0e11;
+  --credit: #4cc28f;
+  --credit-soft: #11261c;
+  --debit: #f08a70;
+  --debit-soft: #2c1712;
+  --warn: #e8b056;
+  --warn-soft: #2a1f0c;
+  --error: #ec8aa6;
+  --error-soft: #2c1219;
+  --chart-in: #2e9b6a;
+  --chart-out: #e0583f;
+  --chart-line: #b0b6c0;
+  --chart-grid: #222730;
+  --shadow-pop: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunken: var(--surface-sunken);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-credit: var(--credit);
+  --color-credit-soft: var(--credit-soft);
+  --color-debit: var(--debit);
+  --color-debit-soft: var(--debit-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+  --radius-ctl: 8px;
+  --radius-panel: 12px;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-feature-settings: "ss01", "cv11";
+}
+
+.num {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.28s var(--ease-out) both;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-sunken) 25%, var(--border) 50%, var(--surface-sunken) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in {
+    animation: none;
+  }
+  .skeleton {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
